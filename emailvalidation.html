@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Name and Email Validation</title>
+<style>
+  .error {
+    color: red;
+  }
+</style>
+</head>
+<body>
+
+<form id="myForm" onsubmit="return validateForm()">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><span id="nameError" class="error"></span><br>
+  
+  <label for="email">Email:</label><br>
+  <input type="text" id="email" name="email"><span id="emailError" class="error"></span><br>
+  
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function validateForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var nameError = document.getElementById('nameError');
+  var emailError = document.getElementById('emailError');
+  
+  var namePattern = /^[a-zA-Z\s]+$/; // Regular expression for  letters a-zA-Z and  NO blank  spaces that is \s
+//   and plus sign for * i.e can repaeat for no,.of times
+
+  if (name === "") {
+    nameError.textContent = "Name is required"; // yo message dekhauxa ..and this could be changed and formatted too but html ma mildaina//
+    return false;
+  } else if (!name.match(namePattern)) {
+    nameError.textContent = "Name can only contain letters and spaces";
+    return false;
+  } else {
+    nameError.textContent = "";
+  }
+  
+  var emailPattern = /^[^\s\d][^\s@]+@[^\s@]+\.[^\s@]+$/; // Regular expression for a email format , 
+//   should start and end with/ no blankspace and no @  and no digits d annd + for any no of times...
+// then we need"@"...again any number of letters or numbers without blank and @  ....again ".(period) but with back slash coz java ma chainxa
+//  and again same thing then at last $ and / for closing as per java arrequirement "
+
+  if (email === "") {
+    emailError.textContent = "Email is required";
+    return false;
+  } else if (!email.match(emailPattern)) {
+    emailError.textContent = "Invalid email format";
+    return false;
+  } else {
+    emailError.textContent = "";
+  }
+  
+  return true; 
+}
+</script>
+
+</body>
+</html>

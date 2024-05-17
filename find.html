@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Word</title>
+<style>
+  .highlight {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+
+<h2>Find Word</h2>
+
+<label for="searchWord">Enter word to find:</label><br>
+<input type="text" id="searchWord" name="searchWord">
+<button onclick="findWord()">Find</button>
+
+<p id="content">
+  In life's vast tapestry, we weave our unique stories,
+Each thread a moment, each knot a lesson to carry.
+Through valleys of shadow and peaks of sunlight,
+We navigate the labyrinth of existence, ever in flight.
+
+In love's embrace, we find solace and strength,
+In loss, we learn resilience, forging bonds at length.
+With every sunrise, a new chance to dream,
+To paint our hopes on the canvas of life's stream.
+
+Life's symphony, composed of laughter and tears,
+Each note a reminder of our fleeting years.
+Yet in the melody, we find purpose and grace,
+Embracing the beauty of life's ever-changing pace.
+</p>
+
+<script>
+function findWord() {
+  var searchTerm = document.getElementById('searchWord').value;
+  var content = document.getElementById('content').innerHTML;
+  var highlightedContent = content.replace(new RegExp(searchTerm, 'gi'), '<span class="highlight">$&</span>'); 
+//   this line to repalce the found word and highlihght ..searchterm is variable mentioed above ang g is for global ness
+// i for case sensetive A=a garna and span $& for highligting 
+  document.getElementById('content').innerHTML = highlightedContent;
+}
+</script>
+
+</body>
+</html>
