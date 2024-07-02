@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(148, 229, 242);
+}
+    form{
+    width: 500px;
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 10%;
+    border: 1px solid rgb(18, 122, 167);
+}
+.form-element{
+    display: flex;
+
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+.form-element label{
+    flex: 0 0 120px;
+    text-align: left;
+    margin-right: 10px;
+}
+#submit_button{
+    background-color:rgb(16, 76, 104);
+    padding: 3px;
+    float: right;
+    margin-left: 200px;
+    border-radius: 3px;
+    color: white;
+    position: absolute;
+    
+}
