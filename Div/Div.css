@@ -1,0 +1,18 @@
+.panel{
+    border: 2px solid ;
+    height: 400px;
+    width: 250px;
+align-self: start;
+}
+#left_panel{
+    background-color: brown;
+    display: inline-block;
+}
+#content_panel{
+    background-color: rgb(239, 95, 95);
+    display: inline-block;
+}
+#right_panel{
+    background-color: rgb(178, 50, 50);
+    display: inline-block;
+}
